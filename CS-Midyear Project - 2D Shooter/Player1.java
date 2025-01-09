@@ -20,19 +20,19 @@ public class Player1 extends Actor
     
     public void isKeyDown(){
         if(Greenfoot.isKeyDown("w")){
-            setLocation(getX(), getY()-2);
-        }
-        if(Greenfoot.isKeyDown("a")){
-            setLocation(getX()-2, getY());
+            move(2);
         }
         if(Greenfoot.isKeyDown("s")){
-            setLocation(getX(), getY()+2);
-        }
-        if(Greenfoot.isKeyDown("d")){
-            setLocation(getX()+2, getY());
+            move(-2);
         }
         if(Greenfoot.isKeyDown("x")){
             getWorld().addObject(new P1_Proj(), getX(), getY());
+        }
+        if(Greenfoot.isKeyDown("a")){
+            turn(-5);
+        }
+        if(Greenfoot.isKeyDown("d")){
+            turn(5);
         }
     }
 }

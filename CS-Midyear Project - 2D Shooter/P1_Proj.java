@@ -14,6 +14,6 @@ public class P1_Proj extends Actor
      */
     public void act()
     {
-        // Add your action code here.
+        move(10);
     }
 }

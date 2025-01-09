@@ -19,19 +19,19 @@ public class Player2 extends Actor
     
     public void isKeyDown(){
         if(Greenfoot.isKeyDown("up")){
-            setLocation(getX(), getY()-2);
-        }
-        if(Greenfoot.isKeyDown("left")){
-            setLocation(getX()-2, getY());
+            move(-2);
         }
         if(Greenfoot.isKeyDown("down")){
-            setLocation(getX(), getY()+2);
-        }
-        if(Greenfoot.isKeyDown("right")){
-            setLocation(getX()+2, getY());
+            move(2);
         }
         if(Greenfoot.isKeyDown("space")){
-            getWorld().addObject(new P2_Proj(), getX(), getY());
+            getWorld().addObject(new P1_Proj(), getX(), getY());
+        }
+        if(Greenfoot.isKeyDown("left")){
+            turn(5);
+        }
+        if(Greenfoot.isKeyDown("right")){
+            turn(-5);
         }
     }
 }
