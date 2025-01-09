@@ -8,31 +8,48 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player1 extends Actor
 {
+    private int reloadTime;
+    private int rpCounter;
+    private int spCounter;
     public Player1(){
         GreenfootImage image = getImage();
-        image.scale(image.getWidth()/2, image.getHeight()/2);
+        image.scale(image.getWidth() / 2, image.getHeight() / 2);
         setImage(image);
+        reloadTime = 0;
+        rpCounter = 0;
+        spCounter = 0;
     }
+    /**
+     * Act - do whatever the Player1 wants to do. This method is called whenever
+     * the 'Act' or 'Run' button gets pressed in the environment.
+     */
     public void act()
     {
         isKeyDown();
     }
-    
     public void isKeyDown(){
         if(Greenfoot.isKeyDown("w")){
-            move(2);
-        }
-        if(Greenfoot.isKeyDown("s")){
-            move(-2);
-        }
-        if(Greenfoot.isKeyDown("x")){
-            getWorld().addObject(new P1_Proj(), getX(), getY());
+            if(rpCounter > 0){
+                move(5);
+            } else {
+                move(2);
+            }
         }
         if(Greenfoot.isKeyDown("a")){
             turn(-5);
         }
+        if(Greenfoot.isKeyDown("s")){
+            if(rpCounter > 0){
+                move(-5);
+            } else {
+                move(-2);
+            }
+        }
         if(Greenfoot.isKeyDown("d")){
             turn(5);
+        }
+        if(Greenfoot.isKeyDown("x")){
+            getWorld().addObject(new P1Proj(getRotation(), 5), getX(), getY());
         }
     }
 }
