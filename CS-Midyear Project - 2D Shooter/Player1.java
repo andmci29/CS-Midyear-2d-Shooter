@@ -19,10 +19,6 @@ public class Player1 extends Actor
         rpCounter = 0;
         spCounter = 0;
     }
-    /**
-     * Act - do whatever the Player1 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
         isKeyDown();
@@ -53,3 +49,4 @@ public class Player1 extends Actor
         }
     }
 }
+

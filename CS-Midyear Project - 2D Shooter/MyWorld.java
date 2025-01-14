@@ -8,8 +8,8 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class MyWorld extends World
 {
-    private int p1Score;
-    private int p2Score;
+    private int p1Health;
+    private int p2Health;
     private int counter;
     /**
      * Constructor for objects of class MyWorld.
@@ -20,8 +20,8 @@ public class MyWorld extends World
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(600, 400, 1); 
         prepare();
-        p1Score = 0;
-        p2Score = 0;
+        p1Health = 100;
+        p2Health = 100;
         counter++;
     }
     /**
@@ -39,15 +39,15 @@ public class MyWorld extends World
         player12.setLocation(298,289);
         removeObject(player12);
     }
-    public void changeP1Score(){
-        p1Score++;
+    public void changeP1Health(int p1HealthChange){
+        p1Health += p1HealthChange;
     }
-    public void changeP2Score(){
-        p2Score++;
+    public void changeP2Score(int p2HealthChange){
+        p2Health += p2HealthChange;
     }
     private void scoreboard(){
-        showText("Score: " + p1Score, 50, 20);
-        showText("Score: " + p2Score, 550, 20);
+        showText("Health: " + p2Health, 50, 20);
+        showText("Health: " + p1Health, 550, 20);
     }
     private void spawnPowers(){
         if(counter % 250 == 0){
@@ -60,6 +60,14 @@ public class MyWorld extends World
         }
     }
     public void act(){
+        if(p2Health <= 0){
+            Greenfoot.stop();
+            p2Health = 0;
+        }
+        if(p1Health <= 0){
+            Greenfoot.stop();
+            p1Health =0;
+        }
         scoreboard();
         counter++;
         spawnPowers();

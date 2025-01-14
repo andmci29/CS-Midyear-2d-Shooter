@@ -18,12 +18,17 @@ public class P2Proj extends Actor
         turn(rotation);
         this.speed = speed;
     }
-    /**
-     * Act - do whatever the P2Proj wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
         move(-speed);
+        isTouching();
+    }
+    public void isTouching(){
+        if(isTouching(Player1.class)){
+            ((MyWorld)getWorld()).changeP2Score(-2);
+        }
+        if(isAtEdge() || isTouching(Player1.class)){
+            getWorld().removeObject(this);
+        }
     }
 }

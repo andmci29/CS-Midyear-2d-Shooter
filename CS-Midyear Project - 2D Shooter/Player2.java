@@ -1,7 +1,7 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Player2 here.
+ * Write a description of class Player1 here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
@@ -12,33 +12,40 @@ public class Player2 extends Actor
     private int rpCounter;
     private int spCounter;
     public Player2(){
+        GreenfootImage image = getImage();
+        image.scale(image.getWidth() / 2, image.getHeight() / 2);
+        setImage(image);
         reloadTime = 0;
         rpCounter = 0;
         spCounter = 0;
     }
-    /**
-     * Act - do whatever the Player2 wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
-     */
     public void act()
     {
         isKeyDown();
     }
     public void isKeyDown(){
-        if(Greenfoot.isKeyDown("up")){
-            move(-2);
+        if(Greenfoot.isKeyDown("m")){
+            getWorld().addObject(new P2Proj(getRotation(), 5), getX(), getY());
         }
-        if(Greenfoot.isKeyDown("left")){
+        if(Greenfoot.isKeyDown("k")){
+            if(rpCounter > 0){
+                move(5);
+            } else {
+                move(2);
+            }
+        }
+        if(Greenfoot.isKeyDown("j")){
             turn(-5);
         }
-        if(Greenfoot.isKeyDown("down")){
-            move(2);
+        if(Greenfoot.isKeyDown("i")){
+            if(rpCounter > 0){
+                move(-5);
+            } else {
+                move(-2);
+            }
         }
-        if(Greenfoot.isKeyDown("right")){
+        if(Greenfoot.isKeyDown("l")){
             turn(5);
-        }
-        if(Greenfoot.isKeyDown("space")){
-            getWorld().addObject(new P2Proj(getRotation(), 5), getX(), getY());
         }
     }
 }
