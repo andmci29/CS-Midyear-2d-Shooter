@@ -1,0 +1,26 @@
+#BlueJ class context
+comment0.target=SingleWorld
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ SingleWorld\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment1.params=
+comment1.target=SingleWorld()
+comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MyWorld.\r\n\r\n
+comment10.params=
+comment10.target=void\ act()
+comment2.params=
+comment2.target=void\ prepare()
+comment2.text=\r\n\ Prepare\ the\ world\ for\ the\ start\ of\ the\ program.\r\n\ That\ is\:\ create\ the\ initial\ objects\ and\ add\ them\ to\ the\ world.\r\n
+comment3.params=
+comment3.target=int\ getTimer()
+comment4.params=
+comment4.target=int\ getRate()
+comment5.params=timer
+comment5.target=void\ setTimer(int)
+comment6.params=
+comment6.target=void\ timers()
+comment7.params=x
+comment7.target=void\ addScore(int)
+comment8.params=
+comment8.target=int\ getScore()
+comment9.params=
+comment9.target=void\ spawnIncrease()
+numComments=11
